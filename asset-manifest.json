@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Droisys-vocab/static/css/main.073c9b0a.css",
+    "main.js": "/Droisys-vocab/static/js/main.c6c4bb9d.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Droisys-vocab/static/js/787.28cb0dcd.chunk.js",
+    "static/media/logo-droisys.png": "/Droisys-vocab/static/media/logo-droisys.0b772ea7c4cb8c3e8f5b.png",
+    "index.html": "/Droisys-vocab/index.html",
+    "main.073c9b0a.css.map": "/Droisys-vocab/static/css/main.073c9b0a.css.map",
+    "main.c6c4bb9d.js.map": "/Droisys-vocab/static/js/main.c6c4bb9d.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Droisys-vocab/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.c6c4bb9d.js"
+  ]
+}
