@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Form() {
   return <div className='container'>
@@ -24,6 +25,11 @@ export default function Form() {
     <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" className="btn btn-primary">Sign up</button>
+  
 </form>
+<div className='my-2'>
+<small id="passwordHelpBlock" className="form-text text-muted">
+  Already have an account?
+</small></div><button type="button" className="btn btn-success"><Link className='text-decoration-none text-light ' to="/Log-in">Log in</Link></button>
   </div>;
 }
