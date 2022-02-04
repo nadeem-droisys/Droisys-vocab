@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import img1 from "./logo-droisys.png"
 
 export default function Navbar() {
   return <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
-    <Link className="navbar-brand" to="/">DroisysVocab</Link>
+    <Link className="navbar-brand" to="/"><img src={img1} alt="Droisys" width="150" height="30"/></Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -13,6 +14,9 @@ export default function Navbar() {
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" aria-current="page" to="/Database">Database</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/Newword">Add new</Link>

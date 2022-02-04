@@ -1,7 +1,11 @@
 import React from 'react';
 
 export default function Newword() {
-  return <div>
-      <h1> hi, here, you can add a new word. i am working on it.</h1>
+  return <div className='container'>
+      <h1 className='mx-2 my-5'> Add your word to our database</h1>
+      <div className="input-group mb-3">
+  <input type="text" className="form-control mx-2" placeholder="Word" />
+  <input type="text" className="form-control mx-2" placeholder="Meaning"/>
+</div>
   </div>;
 }
