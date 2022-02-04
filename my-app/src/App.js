@@ -9,6 +9,8 @@ import Newword from './components/Newword';
 import Home from './components/Home';
 import About from './components/About';
 import Database from './components/Database';
+import Form from './components/Form';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
        <Route path="/Database" element={<Database />} />
        <Route path="/Newword" element={<Newword />} />
        <Route path="/About" element={<About />} />
+       <Route path="/Sign-up" element={<Form/>} />
+       <Route path="/Log-in" element={<Login/>} />
      </Routes>
      </BrowserRouter>
   );
