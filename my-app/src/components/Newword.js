@@ -84,16 +84,27 @@ export default function Newword() {
           Add to Dictionary
         </button>
       </div>
-      <div id="notes">
-        {sortedData.map((elem, index) => {
-          return (
-            <h4 className="my-3" key={index}>
-              {elem.word} : {elem.meaning}
-              <small>{elem.time}</small>
-            </h4>
-          );
-        })}{" "}
-      </div>
+      <table className="table table-striped table-hover table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">Word</th>
+            <th scope="col">Meaning</th>
+            <th scope="col">History</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {sortedData.map((elem, index) => {
+            return (
+              <tr key={index}>
+                <td>{elem.word}</td>
+                <td>{elem.meaning}</td>
+                <td>{elem.time}</td>
+              </tr>
+            );
+          })}{" "}
+        </tbody>
+      </table>
     </div>
   );
 }
