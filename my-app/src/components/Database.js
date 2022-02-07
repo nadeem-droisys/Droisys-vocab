@@ -1,12 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Database() {
-  return <div className='container'>
-  <h1 className='mt-5 mb-2 mx-2'>Our Database</h1>
-  <div> <h4 className='my-3'>Word : Meaning kjbvkjbvkjbkvbjkjbkjf kbekjkbjebiebkjb jebovb</h4></div>
-  <div> <h4 className='my-3'>Word : Meaning kjbvkjbvkjbkvbjkjbkjf kbekjkbjebiebkjb jebovb</h4></div>
-  <div> <h4 className='my-3'>Word : Meaning kjbvkjbvkjbkvbjkjbkjf kbekjkbjebiebkjb jebovb</h4></div>
-  <div> <h4 className='my-3'>Word : Meaning kjbvkjbvkjbkvbjkjbkjf kbekjkbjebiebkjb jebovb</h4></div>
+  const [insertWord, setInsertWord] = useState(getDataLocal());
+  const sortType = "asc";
+  function getDataLocal() {
+    let localData = localStorage.getItem("dictionary");
+    if (localData) {
+      return JSON.parse(localStorage.getItem("dictionary"));
+    } else {
+      return [];
+    }
+  }
+  useEffect(() => {
+    localStorage.setItem("dictionary", JSON.stringify(insertWord));
+  }, [insertWord]);
 
-</div>;
+  const sortedData = insertWord.sort((a, b) => {
+    const isReversed = sortType === "asc" ? 1 : -1;
+    return isReversed * a.word.localeCompare(b.word);
+  });
+  return (
+    <div className="container">
+      <div className="d-flex justify-content-between mt-5">
+        <button type="button" className="btn btn-success">
+          <Link className="text-decoration-none text-light " to="/">
+            Back
+          </Link>
+        </button>
+        <button type="button" className="btn btn-success">
+          <Link className="text-decoration-none text-light " to="/Newword">
+            Add New
+          </Link>
+        </button>
+      </div>
+      <h1 className="my-4 mx-2 text-center">Our DataBase</h1>
+
+      <table className="table table-striped table-hover table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">Word</th>
+            <th scope="col">Meaning</th>
+            <th scope="col">History</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {sortedData.map((elem, index) => {
+            return (
+              <tr key={index}>
+                <td>{elem.word}</td>
+                <td>{elem.meaning}</td>
+                <td>{elem.time}</td>
+              </tr>
+            );
+          })}{" "}
+        </tbody>
+      </table>
+    </div>
+  );
 }

@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { Link, useLocation } from "react-router-dom";
-import img1 from "./logo-droisys.png";
+import img1 from "./log.png";
 
 export default function Navbar() {
   let location = useLocation();
@@ -12,7 +12,7 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <img src={img1} alt="Droisys" width="150" height="30" />
+            <img src={img1} alt="Droisys" width="250" height="30" />
           </Link>
           <button
             className="navbar-toggler"
@@ -30,16 +30,6 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link className={`nav-link ${location.pathname==="/"?"active":""}`} to="/">
                   Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className={`nav-link ${location.pathname==="/Database"?"active":""}`} to="/Database">
-                  Database
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className={`nav-link ${location.pathname==="/Newword"?"active":""}`} to="/Newword">
-                  Add new
                 </Link>
               </li>
               <li className="nav-item">
