@@ -19,6 +19,7 @@ export default function Newword() {
 
   function addWord(e) {
     e.preventDefault();
+    console.log("clicked")
     let currentTime = String(new Date());
     let myTime = currentTime.substring(4, 21);
     let insertWords = {
