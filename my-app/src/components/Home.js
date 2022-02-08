@@ -60,9 +60,6 @@ export default function Home() {
         />
       </div>
       <div>
-        {" "}
-        <table className="mt-5 table table-striped table-hover table-responsive">
-          <tbody>
             {insertWord
               .filter((val) => {
                 if (search === "") {
@@ -75,15 +72,10 @@ export default function Home() {
               })
               .map((elem, index) => {
                 return (
-                  <tr key={index}>
-                    <td>{elem.word}</td>
-                    <td>{elem.meaning}</td>
-                    <td>{elem.time}</td>
-                  </tr>
+                  <h5 key={index}>{elem.word}        {elem.meaning}         {elem.time}
+              </h5>
                 );
               })}
-          </tbody>
-        </table>
       </div>
     </div>
   );

@@ -35,28 +35,12 @@ export default function Database() {
         </button>
       </div>
       <h1 className="my-4 mx-2 text-center">Our DataBase</h1>
-
-      <table className="table table-striped table-hover table-responsive">
-        <thead>
-          <tr>
-            <th scope="col">Word</th>
-            <th scope="col">Meaning</th>
-            <th scope="col">History</th>
-          </tr>
-        </thead>
-
-        <tbody>
           {sortedData.map((elem, index) => {
             return (
-              <tr key={index}>
-                <td>{elem.word}</td>
-                <td>{elem.meaning}</td>
-                <td>{elem.time}</td>
-              </tr>
+              <h5 key={index}>{elem.word}        {elem.meaning}         {elem.time}
+              </h5>
             );
-          })}{" "}
-        </tbody>
-      </table>
+          })}
     </div>
   );
 }

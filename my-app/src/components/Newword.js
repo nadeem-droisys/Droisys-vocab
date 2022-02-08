@@ -17,8 +17,7 @@ export default function Newword() {
     localStorage.setItem("dictionary", JSON.stringify(insertWord));
   }, [insertWord]);
 
-  function addWord(e) {
-    e.preventDefault();
+  function addWord() {
     console.log("clicked")
     let currentTime = String(new Date());
     let myTime = currentTime.substring(4, 21);
@@ -30,15 +29,10 @@ export default function Newword() {
     if (!inputWord || !inputMeaning) {
       alert("both fields required");
     } else {
-      insertWord.filter((val) => {
-        if (val.word.toLowerCase().includes(inputWord.toLowerCase())) {
-          alert("already in our data base");
-        } else {
           setInsertWord([...insertWord, insertWords]);
           setInputWord("");
           setInputMeaning("");
-        }
-      });
+          console.log("else statement")
     }
   }
   const sortedData = insertWord.sort((a, b) => {
@@ -84,27 +78,13 @@ export default function Newword() {
           Add to Dictionary
         </button>
       </div>
-      <table className="table table-striped table-hover table-responsive">
-        <thead>
-          <tr>
-            <th scope="col">Word</th>
-            <th scope="col">Meaning</th>
-            <th scope="col">History</th>
-          </tr>
-        </thead>
-
-        <tbody>
           {sortedData.map((elem, index) => {
             return (
-              <tr key={index}>
-                <td>{elem.word}</td>
-                <td>{elem.meaning}</td>
-                <td>{elem.time}</td>
-              </tr>
+              <h5 key={index}>{elem.word}        {elem.meaning}         {elem.time}
+              </h5>
             );
-          })}{" "}
-        </tbody>
-      </table>
+          })}
+        
     </div>
   );
 }
