@@ -35,7 +35,8 @@ export default function Database() {
           </Link>
         </button>
       </div>
-      <h1 className="my-4 mx-2 text-center">Our DataBase</h1><table className="table table-striped table-hover table-responsive"><thead>
+      <h1 className="my-4 mx-2 text-center">Our DataBase</h1>
+      <table className="table table-striped table-hover table-responsive"><thead>
           <tr>
             <th scope="col">Word</th>
             <th scope="col">Meaning</th>
