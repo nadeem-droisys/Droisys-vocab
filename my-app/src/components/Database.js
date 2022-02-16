@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Structure from "./Structure";
 
 export default function Database() {
   const [insertWord, setInsertWord] = useState(getDataLocal());
@@ -34,13 +35,20 @@ export default function Database() {
           </Link>
         </button>
       </div>
-      <h1 className="my-4 mx-2 text-center">Our DataBase</h1>
+      <h1 className="my-4 mx-2 text-center">Our DataBase</h1><table className="table table-striped table-hover table-responsive"><thead>
+          <tr>
+            <th scope="col">Word</th>
+            <th scope="col">Meaning</th>
+            <th scope="col">History</th>
+          </tr>
+        </thead></table>
           {sortedData.map((elem, index) => {
             return (
-              <h5 key={index}>{elem.word}        {elem.meaning}         {elem.time}
-              </h5>
+              <Structure key={index} word={elem.word} meaning={elem.meaning} time={elem.time}
+              />
             );
           })}
+          
     </div>
   );
 }

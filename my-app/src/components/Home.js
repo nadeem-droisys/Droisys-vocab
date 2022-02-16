@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Structure from "./Structure";
 
 export default function Home() {
   const [inputWord, setInputWord] = useState("");
@@ -59,7 +60,13 @@ export default function Home() {
           aria-describedby="inputGroup-sizing-lg"
         />
       </div>
-      <div>
+      <div><table className="table table-striped table-hover table-responsive"><thead>
+          <tr>
+            <th scope="col">Word</th>
+            <th scope="col">Meaning</th>
+            <th scope="col">History</th>
+          </tr>
+        </thead></table>
             {insertWord
               .filter((val) => {
                 if (search === "") {
@@ -72,8 +79,8 @@ export default function Home() {
               })
               .map((elem, index) => {
                 return (
-                  <h5 key={index}>{elem.word}        {elem.meaning}         {elem.time}
-              </h5>
+                  <Structure key={index} word={elem.word} meaning={elem.meaning} time={elem.time}
+              />
                 );
               })}
       </div>

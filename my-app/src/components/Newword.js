@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Structure from "./Structure";
 export default function Newword() {
   const [inputWord, setInputWord] = useState("");
   const [inputMeaning, setInputMeaning] = useState("");
@@ -29,10 +30,16 @@ export default function Newword() {
     if (!inputWord || !inputMeaning) {
       alert("both fields required");
     } else {
+      insertWord.map((val) => {
+        if (!val.word.toLowerCase().includes(inputWord.toLowerCase())) {
           setInsertWord([...insertWord, insertWords]);
           setInputWord("");
           setInputMeaning("");
-          console.log("else statement")
+        }
+        else{
+          alert("already in our database")
+        }
+      });
     }
   }
   const sortedData = insertWord.sort((a, b) => {
@@ -78,12 +85,20 @@ export default function Newword() {
           Add to Dictionary
         </button>
       </div>
+      <table className="table table-striped table-hover table-responsive"><thead>
+          <tr>
+            <th scope="col">Word</th>
+            <th scope="col">Meaning</th>
+            <th scope="col">History</th>
+          </tr>
+        </thead></table>
           {sortedData.map((elem, index) => {
             return (
-              <h5 key={index}>{elem.word}        {elem.meaning}         {elem.time}
-              </h5>
+              <Structure key={index} word={elem.word} meaning={elem.meaning} time={elem.time}
+              />
             );
           })}
+          
         
     </div>
   );
